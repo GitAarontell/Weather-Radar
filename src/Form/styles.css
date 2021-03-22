@@ -1,0 +1,50 @@
+.container-a{
+    background-color: rgb(145, 173, 211);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.Title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.searchBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.searchBar input{
+    border-radius: 8px;
+}
+
+.temperature{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.temperature h1{
+    color: white;
+}
+
+.earth{
+    position: absolute;
+    right: -10%;
+    bottom: -60%;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    border-radius: 50% 5% 0 50%;
+}
+
+*:focus{
+    outline: none;
+}
