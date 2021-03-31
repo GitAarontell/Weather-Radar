@@ -41,8 +41,46 @@
     bottom: -60%;
     height: 100%;
     width: 100%;
-    background-color: green;
+    background-color: rgb(59, 139, 59);
     border-radius: 50% 5% 0 50%;
+    z-index: 2;
+}
+
+.waves{
+    position: absolute;
+    bottom: -200px;
+    left: -20%;
+    z-index: 1;
+    height: 500px;
+    width: 100%;
+}
+
+.movement{
+    position: absolute;
+    border-radius: 43%;
+    background-color: rgb(20, 121, 204);
+    top: 0;
+    height: 550px;
+    width: 600px;
+}
+
+.waveOne{
+    animation: wave 21s infinite linear;
+    left: 20%;
+}
+
+.waveTwo{
+    animation: wave 18s infinite linear;
+    right: 30%;
+}
+
+.waveThree{
+    animation: wave 16s infinite linear;
+}
+
+@keyframes wave {
+    from { transform: rotate(0deg);}
+    from { transform: rotate(360deg);}
 }
 
 *:focus{

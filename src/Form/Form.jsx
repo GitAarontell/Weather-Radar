@@ -57,6 +57,12 @@ class Form extends React.Component {
                     <House className='house'></House>
                 </div>
 
+                <div className='waves'>
+                    <div className='waveOne movement'></div>
+                    <div className='waveTwo movement'></div>
+                    <div className='waveThree movement'></div>
+                </div>
+
             </div>
         );
     }
