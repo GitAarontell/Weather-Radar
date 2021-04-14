@@ -1,15 +1,22 @@
 import React from 'react';
 import './styles.css';
+import Temperature from './Temperature';
+import Error from './ErrorLocation';
 
 class Results extends React.Component {
+
     render() {
-        return (
-            <div className='centeredColumnFlex'>
-                <div className='infoContainer centeredColumnFlex'>
-                    <h1>{this.props.temp}°F</h1>
-                    <h1>{this.props.weather}</h1>
-                </div>
-            </div>
+
+        let post;
+
+        if(this.props.code === 200){
+            post = <Temperature temp={this.props.temp} weather={this.props.weather}></Temperature>
+        } else {
+            post = <Error></Error>
+        }
+
+        return (            
+            post            
         );
     }
 }

@@ -11,7 +11,7 @@ class Form extends React.Component {
 
         this.key = '4779d0f4e9ba4b2449eb0ee7bef11459';
         this.handleChange = this.handleChange.bind(this);
-        this.showInfo = this.showInfo.bind(this);
+        
 
 
         this.state = {
@@ -47,27 +47,7 @@ class Form extends React.Component {
         }
     }
 
-    showInfo() {
-        if (this.state.code === 200) {
-            return (
-                <div className='centeredColumnFlex'>
-                    <div className='infoContainer centeredColumnFlex'>
-                        <h1>{Math.round(this.state.temp)}° F</h1>
-                        <h1>{this.state.weather}</h1>
-                    </div>
-                </div>
-            );
-        } else {
-            return (
-                <div className='centeredColumnFlex'>
-                    <div className='error'>
-                        <h3>Location Unavailable</h3>
-                    </div>
-                </div>
-            );
-        }
-
-    }
+    
 
     render() {
         console.log(this.state.applicationStart);
@@ -81,10 +61,7 @@ class Form extends React.Component {
                 </div>
 
                 {this.state.applicationStart === true && 
-                    
-                    this.state.code === 200?<Results temp={this.state.temp} weather={this.state.weather}/>:console.log("running")   
-                    
-                                  
+                    <Results code={this.state.code} temp={this.state.temp} weather={this.state.weather}/>                                   
                 }
                 
                 <MultipleClouds />
