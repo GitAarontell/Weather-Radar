@@ -1,0 +1,10 @@
+.infoContainer{
+    height: 350px;
+    width: 300px;
+    background-color: rgb(66, 61, 61);
+    color: rgb(238, 238, 238);
+    border-radius: 20px;
+    opacity: 95%;
+    z-index: 2;
+}
+

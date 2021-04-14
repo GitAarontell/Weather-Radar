@@ -1,0 +1,63 @@
+.cloud{
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+
+.allStructures{
+    position: relative;
+    height: 80px;
+    width: 80px;
+    background-color: lightblue;
+    border-radius: 50%;
+}
+
+.structureOne{
+    right: 50%;
+}
+
+.structureTwo{
+    bottom: 85%;
+    left: 10%;
+}
+
+.structureThree{
+    bottom: 185%;
+    right: 10%;
+}
+
+.structureFour{
+    bottom: 235%;
+    right: 20%;
+}
+
+.one{
+    animation: myanimation 13s linear;
+    animation-iteration-count: infinite;
+}
+
+.two{
+    animation: myanimation 12s linear;
+    animation-iteration-count: infinite;
+}
+
+.three{
+    animation: myanimation 15s linear;
+    animation-iteration-count: infinite;
+}
+
+.multipleClouds{
+    top: 5%;
+    position: absolute;
+    width: 100%;
+}
+
+@keyframes myanimation
+{
+    from {
+        left: -10%;
+    }
+    to {
+        left: 110%;
+    }
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import "./styles.css";
 import House from '../House/House';
+import Results from '../Results/Results'
+import MultipleClouds from '../Clouds/MultipleClouds';
 
 class Form extends React.Component {
 
@@ -9,8 +11,11 @@ class Form extends React.Component {
 
         this.key = '4779d0f4e9ba4b2449eb0ee7bef11459';
         this.handleChange = this.handleChange.bind(this);
+        this.showInfo = this.showInfo.bind(this);
+
 
         this.state = {
+            code: null,
             temp: null,
             weather: null,
             applicationStart: false
@@ -18,25 +23,54 @@ class Form extends React.Component {
     }
 
 
-
     async handleChange(e) {
-        if (e.key === "Enter") {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&appid=${this.key}&units=imperial`);
 
-            const data = await response.json();
-            await this.setState({
-                temp: data.main.temp,
-                weather: data.weather[0].description
+        if (e.key === "Enter") {
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&appid=${this.key}&units=imperial`).catch((err) => {
+                console.log(err.message);
             });
 
-            console.log(this.state.weather);
-            this.setState({ applicationStart: true });
+            const data = await response.json();
+
+            if (data.cod === 200) {
+                await this.setState({
+                    temp: data.main.temp,
+                    weather: data.weather[0].description
+                });
+                this.setState({ applicationStart: true });
+            }
+            this.setState({ code: data.cod });
+
+            //console.log(this.state.weather);
+
             e.target.value = '';
         }
     }
 
-    render() {
+    showInfo() {
+        if (this.state.code === 200) {
+            return (
+                <div className='centeredColumnFlex'>
+                    <div className='infoContainer centeredColumnFlex'>
+                        <h1>{Math.round(this.state.temp)}° F</h1>
+                        <h1>{this.state.weather}</h1>
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <div className='centeredColumnFlex'>
+                    <div className='error'>
+                        <h3>Location Unavailable</h3>
+                    </div>
+                </div>
+            );
+        }
 
+    }
+
+    render() {
+        console.log(this.state.applicationStart);
         return (
             <div className='container-a'>
                 <div className='Title'>
@@ -46,15 +80,17 @@ class Form extends React.Component {
                     <input type='text' placeholder='  Location' onKeyUp={this.handleChange}></input>
                 </div>
 
-                {this.state.applicationStart === true &&
-                    <div className='temperature'>
-                        <h1>{Math.round(this.state.temp)}° Farenheit</h1>
-                        <h1>{this.state.weather}</h1>
-                    </div>
+                {this.state.applicationStart === true && 
+                    
+                    this.state.code === 200?<Results temp={this.state.temp} weather={this.state.weather}/>:console.log("running")   
+                    
+                                  
                 }
+                
+                <MultipleClouds />
 
                 <div className='earth'>
-                    <House className='house'></House>
+                    <House className='house' />
                 </div>
 
                 <div className='waves'>
@@ -77,4 +113,13 @@ export default Form;
                     <h3>Total: ${totalCost()}</h3>
                 </div>
             }
+
+
+
+                                <div className='centeredColumnFlex'>
+                        <div className='infoContainer centeredColumnFlex'>
+                            <h1>{Math.round(this.state.temp)}° F</h1>
+                            <h1>{this.state.weather}</h1>
+                        </div>
+                    </div>
 */
