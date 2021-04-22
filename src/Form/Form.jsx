@@ -3,6 +3,8 @@ import "./styles.css";
 import House from '../House/House';
 import Results from '../Results/Results'
 import MultipleClouds from '../Clouds/MultipleClouds';
+import Sun from '../Sun/Sun';
+import Moon from '../Sun/Moon';
 
 class Form extends React.Component {
 
@@ -11,10 +13,10 @@ class Form extends React.Component {
 
         this.key = '4779d0f4e9ba4b2449eb0ee7bef11459';
         this.handleChange = this.handleChange.bind(this);
-        
-
 
         this.state = {
+            timeSun: 'standard',
+            timeMoon: 'moonStd',
             code: null,
             temp: null,
             weather: null,
@@ -37,20 +39,34 @@ class Form extends React.Component {
                     temp: data.main.temp,
                     weather: data.weather[0].description
                 });
-                this.setState({ applicationStart: true });
+
             }
+            this.setState({ applicationStart: true });
             this.setState({ code: data.cod });
 
-            //console.log(this.state.weather);
+            console.log(data);
+
+            let currentTime = new Date().valueOf() / 1000;
+
+            if (currentTime > data.sys.sunrise && currentTime < data.sys.sunset) {
+                if (this.state.timeSun !== 'standard') {
+                    this.setState({ timeSun: 'dayFromNight' });
+                } 
+                console.log('day');
+            } else {
+                if (this.state.timeMoon === 'moonStd') {
+                    this.setState({ timeMoon: 'nightFromDay' });
+                }
+                console.log('night');
+            }
 
             e.target.value = '';
         }
     }
 
-    
 
     render() {
-        console.log(this.state.applicationStart);
+
         return (
             <div className='container-a'>
                 <div className='Title'>
@@ -60,10 +76,13 @@ class Form extends React.Component {
                     <input type='text' placeholder='  Location' onKeyUp={this.handleChange}></input>
                 </div>
 
-                {this.state.applicationStart === true && 
-                    <Results code={this.state.code} temp={this.state.temp} weather={this.state.weather}/>                                   
+                <Sun time={this.state.timeSun}/>
+                <Moon time={this.state.timeMoon}/>
+
+                {this.state.applicationStart === true &&
+                    <Results code={this.state.code} temp={this.state.temp} weather={this.state.weather} />
                 }
-                
+
                 <MultipleClouds />
 
                 <div className='earth'>
@@ -83,20 +102,3 @@ class Form extends React.Component {
 
 export default Form;
 
-/*
-{set.logTotal > 0 &&
-                <div className='totalCart-a'>
-                    {totalCart}
-                    <h3>Total: ${totalCost()}</h3>
-                </div>
-            }
-
-
-
-                                <div className='centeredColumnFlex'>
-                        <div className='infoContainer centeredColumnFlex'>
-                            <h1>{Math.round(this.state.temp)}° F</h1>
-                            <h1>{this.state.weather}</h1>
-                        </div>
-                    </div>
-*/
