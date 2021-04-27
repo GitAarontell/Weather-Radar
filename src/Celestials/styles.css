@@ -1,0 +1,52 @@
+.bothContainers{
+    height: 100%;
+    position: absolute;
+}
+
+.sunContainer{
+    left: 10%;
+    top: 5%;
+}
+
+.sun{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: yellow;
+    position: relative;
+}
+
+.moonContainer{
+    right: 10%;
+    top: 4%;
+}
+
+.moon{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(145, 173, 211);
+    box-shadow: 20px 18px 0 0 rgb(202, 226, 236);
+    position: relative;
+    visibility: hidden;
+}
+
+.nightFromDay{
+    animation: Rise 5s linear forwards;
+    visibility: visible;
+}
+
+.dayFromNight{
+    animation: Fall 5s linear forwards;
+    visibility: visible;
+}
+
+@keyframes Fall {
+    0% {transform: translateY(100vh);}
+    100% {transform: translateY(0);}
+}
+
+@keyframes Rise {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(100vh);}
+}

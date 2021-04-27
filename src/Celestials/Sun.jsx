@@ -3,8 +3,8 @@ import './styles.css';
 
 function Sun(props) {
     return (
-        <div className={`sun ${props.time}`}>
-
+        <div className='sunContainer bothContainers'>
+            <div className={`sun ${props.time}`}></div>
         </div>
     );
 }

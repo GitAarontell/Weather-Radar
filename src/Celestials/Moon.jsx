@@ -3,8 +3,8 @@ import './styles.css';
 
 function Moon(props) {
     return (
-        <div className={`moon ${props.time}`}>
-
+        <div className='moonContainer bothContainers'>
+            <div className={`moon ${props.time}`}></div>
         </div>
     );
 }

@@ -39,6 +39,18 @@
     z-index: 2;
 }
 
+.botton{
+    position: absolute;
+    top:0px;
+}
+
+button{
+    border-radius: 8px;
+    margin-bottom: 50px;
+    z-index: 4;
+    border: none;
+}
+
 .earth{
     position: absolute;
     right: -10%;
