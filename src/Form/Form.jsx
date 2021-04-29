@@ -1,6 +1,5 @@
 import React from 'react';
 import "./styles.css";
-import House from '../House/House';
 import Results from '../Results/Results'
 import MultipleClouds from '../Clouds/MultipleClouds';
 import Sun from '../Celestials/Sun';
