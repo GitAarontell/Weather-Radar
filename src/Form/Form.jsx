@@ -5,6 +5,7 @@ import Results from '../Results/Results'
 import MultipleClouds from '../Clouds/MultipleClouds';
 import Sun from '../Celestials/Sun';
 import Moon from '../Celestials/Moon';
+import Waves from '../Waves/Waves';
 
 class Form extends React.Component {
 
@@ -16,6 +17,7 @@ class Form extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleClickTwo = this.handleClickTwo.bind(this);
         this.capitalizeFirstLetters = this.capitalizeFirstLetters.bind(this);
+        this.timeOfDay = this.timeOfDay.bind(this);
 
         this.state = {
             timeSun: '',
@@ -28,6 +30,27 @@ class Form extends React.Component {
             searchBar: null,
             check: false
         };
+    }
+
+    //Need to put these functions in a javascript file then import
+    //Font needs to be some sort of nature font, also hover states please
+
+    timeOfDay(currentTime, sunrise, sunset) {
+        try {
+            if (currentTime > sunrise && currentTime < sunset) {
+                if (this.state.timeSun !== '' || this.state.timeSun === 'dayFromNight') {
+                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay' });
+                }
+                console.log('day');
+            } else {
+                if (this.state.timeMoon === '' || this.state.timeMoon === 'nightFromDay') {
+                    this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight' });
+                }
+                console.log('night');
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     capitalizeFirstLetters(str) {
@@ -67,32 +90,18 @@ class Form extends React.Component {
                 temp: data.main.temp,
                 weather: this.capitalizeFirstLetters(data.weather[0].description)
             });
-            //this.capitalizeFirstLetters(this.state.weather);
         }
         this.setState({ applicationStart: true });
         this.setState({ code: data.cod });
 
         console.log(data);
 
-        // put this in function later
         let currentTime = new Date().valueOf() / 1000;
+        let sunrise = data.sys.sunrise;
+        let sunset = data.sys.sunSet;
 
-        try {
-            if (currentTime > data.sys.sunrise && currentTime < data.sys.sunset) {
-                if (this.state.timeSun !== '') {
-                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay' });
-                }
-                console.log('day');
-            } else {
-                if (this.state.timeMoon === '') {
-                    this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight' });
-                }
-                console.log('night');
-            }
-        } catch (error) {
-            console.log(error);
-        }
-        //////////////////////////////////////
+        this.timeOfDay(currentTime, sunrise, sunset);
+
         this.state.searchBar.value = '';
     }
 
@@ -121,21 +130,15 @@ class Form extends React.Component {
                 <Moon time={this.state.timeMoon} />
 
                 {this.state.applicationStart === true &&
-                    <Results code={this.state.code} temp={this.state.temp} weather={this.state.weather} />
+                    <div className='results'>
+                        <Results code={this.state.code} temp={this.state.temp} weather={this.state.weather} />
+                    </div>
                 }
 
                 <MultipleClouds />
                 <button className='botton' onClick={this.handleClickTwo}>Click</button>
-                <div className='earth'>
 
-                    <House className='house' />
-                </div>
-
-                <div className='waves'>
-                    <div className='waveOne movement'></div>
-                    <div className='waveTwo movement'></div>
-                    <div className='waveThree movement'></div>
-                </div>
+                <Waves></Waves>
 
             </div>
         );

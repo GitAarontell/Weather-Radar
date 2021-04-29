@@ -17,3 +17,10 @@
     from{visibility: visible;}
     to{opacity: hidden;}
 }
+
+@media(max-width: 380px){
+    .infoContainer{
+        height: 300px;
+        width: 257px;
+    }
+}

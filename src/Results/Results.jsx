@@ -6,7 +6,7 @@ import Error from './ErrorLocation';
 class Results extends React.Component {
 
     render() {
-
+        
         let post;
 
         if(this.props.code === 200){

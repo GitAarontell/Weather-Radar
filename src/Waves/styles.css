@@ -1,0 +1,88 @@
+.waveContainer{
+    position: relative;
+    height: 100vw;
+    width: 100vw;
+}
+
+.allBalls{
+    height: 400vw;
+    width: 400vw;
+    border-radius: 43%;
+    position: absolute;
+    left: -150%;
+    top: 42%;
+    opacity: 90%;
+}
+
+.ballOne{
+    animation: wave 40s infinite linear;
+    background-color: rgb(20, 121, 204);
+}
+
+.ballTwo{
+    animation: wave 35s infinite linear;
+    background-color: rgb(59, 142, 209);
+}
+
+.ballThree{
+    animation: wave 30s infinite linear;
+
+    background-color: rgb(67, 154, 224);
+}
+.ballFour{
+    animation: wave 25s infinite linear;
+    background-color: rgb(67, 154, 224);
+}
+
+@keyframes wave {
+    from { transform: rotate(0deg);}
+    from { transform: rotate(-360deg);}
+}
+
+@media(max-width: 1500px){
+    .allBalls{
+        top: 50%;
+    }
+}
+
+@media(max-width: 1300px){
+    .allBalls{
+        top: 60%;
+    }
+}
+
+@media(max-width: 1100px){
+    .allBalls{
+        top: 70%;
+    }
+}
+
+@media(max-width: 900px){
+    .allBalls{
+        top: 80%;
+    }
+}
+
+@media(max-width: 700px){
+    .allBalls{
+        top: 90%;
+    }
+}
+
+@media(max-width: 650px){
+    .allBalls{
+        top: 100%;
+    }
+}
+
+@media(max-width: 539px){
+    .allBalls{
+        top: 120%;
+    }
+}
+
+@media(max-width: 450px){
+    .allBalls{
+        top: 130%;
+    }
+}

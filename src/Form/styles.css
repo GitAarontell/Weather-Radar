@@ -9,7 +9,14 @@
     background-color: rgb(145, 173, 211);
     overflow: hidden;
     height: 100vh;
+    width: 100vw;
     position: relative;
+}
+
+.results{
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
 }
 
 .Title{
@@ -30,7 +37,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-
 }
 
 .searchBar input{
@@ -63,106 +69,12 @@ button{
     z-index: 2;
 }
 
-.waves{
-    position: absolute;
-    bottom: 0;
-    left: -20%;
-    z-index: 1;
-    height: 500px;
-    width: 100%;
-}
-
-.movement{
-    position: absolute;
-    border-radius: 43%;
-
-    top: 0;
-    height: 550px;
-    width: 600px;
-}
-
-.waveOne{
-    animation: wave 21s infinite linear;
-    left: 15%;
-    background-color: rgb(20, 121, 204);
-}
-
-.waveTwo{
-    animation: wave 18s infinite linear;
-    right: 38%;
-    background-color: rgb(59, 142, 209);
-    opacity: 96%;
-}
-
-.waveThree{
-    animation: wave 16s infinite linear;
-    background-color: rgb(67, 154, 224);
-    opacity: 96%;
-}
-
-@keyframes wave {
-    from { transform: rotate(0deg);}
-    from { transform: rotate(-360deg);}
-}
-
 *:focus{
     outline: none;
 }
 
-/* Media Queries */
-
-@media(max-height: 1364px){
-    .waves{
-        bottom: -5%;
-    }
-
-}
-
-@media(max-height: 1215px){
-    .waves{
-        bottom: -10%;
+@media(max-width: 380px){
+    .results{
+        margin-left: -128.5px;
     }
 }
-
-@media(max-height: 1090px){
-    .waves{
-        bottom: -25%;
-    }
-}
-
-@media(max-height: 900px){
-    .waves{
-        bottom: -40%;
-    }
-}
-
-@media(max-height: 800px){
-    .waves{
-        bottom: -50%;
-    }
-}
-
-@media(max-height: 600px){
-    .waves{
-        bottom: -70%;
-    }
-
-}
-
-/* width media queries */
-
-@media(max-width: 570px){
-    .waveOne{
-        left: 20%;
-    }
-
-    .waveTwo{
-        right: 45%;
-    }
-
-    .waveThree{
-        right: 10%;
-    }
-}
-
-
