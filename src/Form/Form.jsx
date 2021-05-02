@@ -5,6 +5,7 @@ import MultipleClouds from '../Clouds/MultipleClouds';
 import Sun from '../Celestials/Sun';
 import Moon from '../Celestials/Moon';
 import Waves from '../Waves/Waves';
+import Land from '../LandMass/Land';
 
 class Form extends React.Component {
 
@@ -136,7 +137,7 @@ class Form extends React.Component {
 
                 <MultipleClouds />
                 <button className='botton' onClick={this.handleClickTwo}>Click</button>
-
+                <Land></Land>
                 <Waves></Waves>
 
             </div>

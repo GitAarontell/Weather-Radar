@@ -2,6 +2,7 @@
     position: relative;
     height: 100vw;
     width: 100vw;
+    z-index: 5;
 }
 
 .allBalls{
@@ -10,7 +11,7 @@
     border-radius: 43%;
     position: absolute;
     left: -150%;
-    top: 42%;
+    top: 74vh;
     opacity: 0.90;
 }
 
@@ -39,50 +40,26 @@
     from { transform: rotate(-360deg);}
 }
 
-@media(max-width: 1500px){
+@media(max-width: 975px){
     .allBalls{
-        top: 50%;
+        top: 70vh;
     }
 }
 
-@media(max-width: 1300px){
+@media(max-width: 850px){
     .allBalls{
-        top: 60%;
+        top: 63vh;
     }
 }
 
-@media(max-width: 1100px){
+@media(max-width: 570px){
     .allBalls{
-        top: 70%;
+        top: 55vh;
     }
 }
 
-@media(max-width: 900px){
+@media(max-width: 290px){
     .allBalls{
-        top: 80%;
-    }
-}
-
-@media(max-width: 700px){
-    .allBalls{
-        top: 90%;
-    }
-}
-
-@media(max-width: 650px){
-    .allBalls{
-        top: 100%;
-    }
-}
-
-@media(max-width: 539px){
-    .allBalls{
-        top: 120%;
-    }
-}
-
-@media(max-width: 450px){
-    .allBalls{
-        top: 130%;
+        top: 50vh;
     }
 }

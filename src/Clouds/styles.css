@@ -1,13 +1,13 @@
 .cloud{
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     position: relative;
 }
 
 .allStructures{
     position: relative;
-    height: 80px;
-    width: 80px;
+    height: 80%;
+    width: 80%;
     background-color: lightblue;
     border-radius: 50%;
 }
@@ -47,12 +47,37 @@
 }
 
 .multipleClouds{
-    top: 5%;
+    top: 8%;
     position: absolute;
     width: 100%;
 }
 
+@media(max-width: 1330px){
+    .multipleClouds{
+        top: 10%;
+    }
+    .cloud{
+        height: 6.3vw;
+        width: 6.3vw;
+    }
+}
+
+@media(max-width: 1100px){
+    .multipleClouds{
+        top: 15%;
+    }
+}
+
+@media(max-width: 900px){
+    .multipleClouds{
+        top: 25%;
+    }
+}
+
 @media(max-width: 820px){
+    .multipleClouds{
+        top: 30%;
+    }
     .one{
         animation: myanimationTwo 9s linear;
         animation-iteration-count: infinite;
@@ -67,7 +92,22 @@
     }
 }
 
+@media(max-width: 700px){
+    .multipleClouds{
+        top: 35%;
+    }
+}
+
+@media(max-width: 600px){
+    .multipleClouds{
+        top: 40%;
+    }
+}
+
 @media(max-width: 500px){
+    .multipleClouds{
+        top: 45%;
+    }
     .one{
         animation: myanimationThree 7s linear;
         animation-iteration-count: infinite;
@@ -79,6 +119,12 @@
     .three{
         animation: myanimationThree 11s linear;
         animation-iteration-count: infinite;
+    }
+}
+
+@media(max-width: 400px){
+    .multipleClouds{
+        top: 47%;
     }
 }
 

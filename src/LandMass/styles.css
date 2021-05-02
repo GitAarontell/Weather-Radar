@@ -1,0 +1,109 @@
+.landContainer{
+    position: absolute;
+    top: 60%;
+    width: 100vw;
+    height: 100vw;
+}
+
+.allHills{
+    border-radius: 50%;
+    position: absolute;
+}
+
+.hillOne{
+    left: -10%;
+    bottom: 10%;
+    height: 100vw;
+    width: 50vw;
+    background-color: rgb(63, 153, 63);
+}
+
+.hillTwo{
+    height: 90vw;
+    width: 90vw;
+    background-color: rgb(83, 165, 83);
+    z-index: 2;
+}
+
+.hillSix{
+    right: -30%;
+    height: 120vw;
+    width: 100vw;
+    bottom: -15%;
+    background-color: rgb(63, 153, 63);
+    z-index: 1;
+}
+
+.hillFour{
+    height: 100vw;
+    width: 10vw;
+    background-color: rgb(71, 156, 71);
+    left: 30%;
+    bottom: 5%;
+}
+
+.hillFive{
+    height: 100vw;
+    width: 10vw;
+    background-color: rgb(71, 156, 71);
+    left: 35%;
+    bottom: 7%;
+}
+
+.allTrees{
+    position: absolute;
+}
+
+.treeZero{
+    left: 9%;
+    top: -3%;
+}
+
+.treeOne{
+    left: 20%;
+    top: -9%;
+}
+
+.treeTwo{
+    top: 5%;
+    left: 35%;
+}
+
+.treeThree{
+    left: 55%;
+}
+
+.treeFour{
+    top: -5%;
+    left: 70%;
+}
+
+.treeFive{
+    top: -5%;
+    left: 85%;
+}
+
+.cave{
+    position: absolute;
+    bottom: 99%;
+    left: 45%;
+    z-index: 1;
+    height: 10vw;
+    width: 10vw;
+}
+
+.mountainOne{
+    position: absolute;
+    bottom: 95%;
+    left: 60%;
+    height: 35vw;
+    width: 35vw;
+}
+
+.mountainTwo{
+    position: absolute;
+    bottom: 94%;
+    left: 69%;
+    height: 45vw;
+    width: 45vw;
+}
