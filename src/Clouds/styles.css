@@ -79,15 +79,15 @@
         top: 30%;
     }
     .one{
-        animation: myanimationTwo 9s linear;
+        animation: myanimationTwo 15s linear;
         animation-iteration-count: infinite;
     }
     .two{
-        animation: myanimationTwo 12s linear;
+        animation: myanimationTwo 18s linear;
         animation-iteration-count: infinite;
     }
     .three{
-        animation: myanimationTwo 15s linear;
+        animation: myanimationTwo 20s linear;
         animation-iteration-count: infinite;
     }
 }

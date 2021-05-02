@@ -6,12 +6,15 @@
 }
 
 .allBalls{
-    height: 400vw;
-    width: 400vw;
+    --variable-width: 6900px;
+    --variable-responsive-width: 400vw;
+    height: 6900px;
+    width: 6900px;
     border-radius: 43%;
     position: absolute;
-    left: -150%;
-    top: 74vh;
+    left: 50%;
+    margin-left: calc(var(--variable-width) / -2);
+    top: 79vh;
     opacity: 0.90;
 }
 
@@ -38,6 +41,15 @@
 @keyframes wave {
     from { transform: rotate(0deg);}
     from { transform: rotate(-360deg);}
+}
+
+@media(max-width: 1465px){
+    .allBalls{
+        height: 400vw;
+        width: 400vw;
+        top: 74vh;
+        margin-left: calc(var(--variable-responsive-width) / -2);
+    }
 }
 
 @media(max-width: 975px){
