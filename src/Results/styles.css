@@ -9,6 +9,7 @@
 }
 
 .error h3{
+    margin-left: 65px;
     animation-delay: 5s;
     animation: dissappear 1s;
 }
@@ -22,5 +23,8 @@
     .infoContainer{
         height: 300px;
         width: 257px;
+    }
+    .error h3{
+        margin-left: 45px;
     }
 }

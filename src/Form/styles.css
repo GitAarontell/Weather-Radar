@@ -46,12 +46,12 @@
     align-items: center;
     color: rgb(255, 255, 255);
     width: 100%;
+
 }
 
 .Title h1 {
     z-index: 2;
 }
-
 
 .searchBar{
     display: flex;
@@ -62,7 +62,7 @@
 .searchBar input{
     border-radius: 8px;
     margin-bottom: 50px;
-    z-index: 2;
+    z-index: 10;
 }
 
 .botton{

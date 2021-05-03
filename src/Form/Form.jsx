@@ -92,17 +92,17 @@ class Form extends React.Component {
                 temp: data.main.temp,
                 weather: this.capitalizeFirstLetters(data.weather[0].description)
             });
+
+            let currentTime = new Date().valueOf() / 1000;
+            let sunrise = data.sys.sunrise;
+            let sunset = data.sys.sunset;
+    
+            this.timeOfDay(currentTime, sunrise, sunset);
         }
         this.setState({ applicationStart: true });
         this.setState({ code: data.cod });
 
         console.log(data);
-
-        let currentTime = new Date().valueOf() / 1000;
-        let sunrise = data.sys.sunrise;
-        let sunset = data.sys.sunset;
-
-        this.timeOfDay(currentTime, sunrise, sunset);
 
         this.state.searchBar.value = '';
     }
