@@ -2,6 +2,7 @@
     height: 80px;
     width: 80px;
     position: relative;
+    z-index: 2;
 }
 
 .allStructures{

@@ -22,16 +22,7 @@
     height: 90vw;
     width: 90vw;
     background-color: rgb(83, 165, 83);
-    z-index: 2;
-}
-
-.hillSix{
-    right: -30%;
-    height: 120vw;
-    width: 100vw;
-    bottom: -15%;
-    background-color: rgb(63, 153, 63);
-    z-index: 1;
+    z-index: 5;
 }
 
 .hillFour{
@@ -48,6 +39,16 @@
     background-color: rgb(71, 156, 71);
     left: 35%;
     bottom: 7%;
+}
+
+
+.hillSix{
+    right: -30%;
+    height: 120vw;
+    width: 100vw;
+    bottom: -15%;
+    background-color: rgb(63, 153, 63);
+    z-index: 4;
 }
 
 .allTrees{
@@ -98,6 +99,7 @@
     left: 60%;
     height: 35vw;
     width: 35vw;
+    z-index: 1;
 }
 
 .mountainTwo{
@@ -106,4 +108,5 @@
     left: 69%;
     height: 45vw;
     width: 45vw;
+    z-index: 3;
 }

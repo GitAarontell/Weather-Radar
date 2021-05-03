@@ -3,6 +3,7 @@
     height: 10vw;
     width: 10vw;
     position: absolute;
+    z-index: 6;
 }
 
 .leaves{
@@ -13,7 +14,7 @@
     bottom: 80%;
     background: green;
     border-radius: 50%;
-    z-index: 1;
+    z-index: 6;
 }
 
 .trunk{
@@ -22,4 +23,5 @@
     width: .5vw;
     top: 20%;
     background-color: rgba(114, 46, 46, 0.63);
+    z-index: 6;
 }

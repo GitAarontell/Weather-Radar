@@ -6,11 +6,31 @@
 }
 
 .container-a{
-    background-color: rgb(145, 173, 211);
+    background-position: 50% 0%;
+    background-size: 300% 1000%;
+    background-image: linear-gradient(to bottom, #91add3, #9587a6, #856875, #654f4d, #413932);
     overflow: hidden;
     height: 100vh;
     width: 100vw;
     position: relative;
+}
+
+.nightBackground{
+    animation: toNight 5s linear forwards;
+}
+
+.dayBackground{
+    animation: toDay 5s linear forwards;
+}
+
+@keyframes toNight {
+    from{background-position: 50% 0%;}
+    to{background-position: 50% 100%;}
+}
+
+@keyframes toDay {
+    from{background-position: 50% 100%;}
+    to{background-position: 50% 0%;}
 }
 
 .results{

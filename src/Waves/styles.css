@@ -6,14 +6,15 @@
 }
 
 .allBalls{
-    --variable-width: 6900px;
+    --variable-static-width: 6900px;
     --variable-responsive-width: 400vw;
+
     height: 6900px;
     width: 6900px;
     border-radius: 43%;
     position: absolute;
     left: 50%;
-    margin-left: calc(var(--variable-width) / -2);
+    margin-left: calc(var(--variable-static-width) / -2);
     top: 79vh;
     opacity: 0.90;
 }

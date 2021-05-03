@@ -28,6 +28,7 @@ class Form extends React.Component {
             applicationStart: false,
             location: '',
             searchBar: null,
+            background: '',
             check: false
         };
     }
@@ -36,15 +37,16 @@ class Form extends React.Component {
     //Font needs to be some sort of nature font, also hover states please
 
     timeOfDay(currentTime, sunrise, sunset) {
+
         try {
             if (currentTime > sunrise && currentTime < sunset) {
                 if (this.state.timeSun !== '' || this.state.timeSun === 'dayFromNight') {
-                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay' });
+                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay',background: 'dayBackground' });
                 }
                 console.log('day');
             } else {
                 if (this.state.timeMoon === '' || this.state.timeMoon === 'nightFromDay') {
-                    this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight' });
+                    this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight', background: 'nightBackground'});
                 }
                 console.log('night');
             }
@@ -86,7 +88,7 @@ class Form extends React.Component {
 
         if (data.cod === 200) {
             console.log(data.weather.description);
-            await this.setState({
+            this.setState({
                 temp: data.main.temp,
                 weather: this.capitalizeFirstLetters(data.weather[0].description)
             });
@@ -98,7 +100,7 @@ class Form extends React.Component {
 
         let currentTime = new Date().valueOf() / 1000;
         let sunrise = data.sys.sunrise;
-        let sunset = data.sys.sunSet;
+        let sunset = data.sys.sunset;
 
         this.timeOfDay(currentTime, sunrise, sunset);
 
@@ -108,16 +110,16 @@ class Form extends React.Component {
     handleClickTwo() {
 
         if (this.state.check === false) {
-            this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight', check: true });
+            this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight', check: true, background: 'nightBackground'});
         } else {
-            this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay', check: false });
+            this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay', check: false, background: 'dayBackground' });
         }
 
     }
     render() {
 
         return (
-            <div className='container-a'>
+            <div className={`container-a ${this.state.background}`}>
                 <div className='Title'>
                     <h1>Weather Radar</h1>
                 </div>
