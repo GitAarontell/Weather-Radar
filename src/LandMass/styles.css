@@ -18,14 +18,51 @@
     background-color: rgb(63, 153, 63);
 }
 
+.hillOneNight{
+    animation: hillOneToNight 5s linear forwards;
+}
+
+.hillOneDay{
+    animation: hillOneToDay 5s linear forwards;
+}
+
+@keyframes hillOneToNight{
+    from{background-color: rgb(63, 153, 63);}
+    to{background-color: rgb(23, 73, 23);}
+}
+
+@keyframes hillOneToDay{
+    from{background-color: rgb(23, 73, 23);}
+    to{background-color: rgb(63, 153, 63);}
+}
+
 .hillTwo{
     height: 90vw;
     width: 90vw;
     background-color: rgb(83, 165, 83);
     z-index: 5;
+    animation: toDay 5s linear forwards;
 }
 
-.hillFour{
+.hillTwoNight{
+    animation: hillTwoToNight 5s linear forwards;
+}
+
+.hillTwoDay{
+    animation: hillTwoToDay 5s linear forwards;
+}
+
+@keyframes hillTwoToNight{
+    from{background-color: rgb(83, 165, 83);}
+    to{background-color: rgb(48, 90, 48);}
+}
+
+@keyframes hillTwoToDay{
+    from{background-color: rgb(48, 90, 48);}
+    to{background-color: rgb(83, 165, 83);}
+}
+
+.hillThree{
     height: 100vw;
     width: 10vw;
     background-color: rgb(71, 156, 71);
@@ -33,7 +70,7 @@
     bottom: 5%;
 }
 
-.hillFive{
+.hillFour{
     height: 100vw;
     width: 10vw;
     background-color: rgb(71, 156, 71);
@@ -41,14 +78,49 @@
     bottom: 7%;
 }
 
+.hillThreeFourNight{
+    animation: hillThreeFourToNight 5s linear forwards;
+}
 
-.hillSix{
+.hillThreeFourDay{
+    animation: hillThreeFourToDay 5s linear forwards;
+}
+
+@keyframes hillThreeFourToNight{
+    from{background-color: rgb(71, 156, 71);}
+    to{background-color: rgb(40, 82, 40);}
+}
+
+@keyframes hillThreeFourToDay{
+    from{background-color: rgb(40, 82, 40);}
+    to{background-color: rgb(71, 156, 71);}
+}
+
+.hillFive{
     right: -30%;
     height: 120vw;
     width: 100vw;
     bottom: -15%;
     background-color: rgb(63, 153, 63);
     z-index: 4;
+}
+
+.hillFiveNight{
+    animation: hillFiveToNight 5s linear forwards;
+}
+
+.hillFiveDay{
+    animation: hillFiveToDay 5s linear forwards;
+}
+
+@keyframes hillFiveToNight{
+    from{background-color: rgb(63, 153, 63);}
+    to{background-color: rgb(32, 78, 32);}
+}
+
+@keyframes hillFiveToDay{
+    from{background-color: rgb(32, 78, 32);}
+    to{background-color: rgb(63, 153, 63);}
 }
 
 .allTrees{
@@ -66,7 +138,7 @@
 }
 
 .treeTwo{
-    top: 5%;
+    top: 4%;
     left: 35%;
 }
 
@@ -91,6 +163,11 @@
     z-index: 1;
     height: 10vw;
     width: 10vw;
+}
+
+@keyframes upperCaveToNight{
+    from{fill:#7A8C98;}
+    to{fill:#4c575f;}
 }
 
 .mountainOne{

@@ -1,11 +1,12 @@
 import React from 'react';
 import './styles.css';
 
-function Trees () {
+function Trees (props) {
+
     return(
         <div className='treeContainer'>
-            <div className='leaves'></div>
-            <div className='trunk'></div>
+            <div className={`leaves ${props.trees[0]}`}></div>
+            <div className={`trunk ${props.trees[1]}`}></div>
         </div>
     );
 }

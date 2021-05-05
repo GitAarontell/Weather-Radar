@@ -17,6 +17,14 @@
     z-index: 6;
 }
 
+.leavesToNight{
+    animation: leavesToNight 5s linear forwards;
+}
+
+.leavesToDay{
+    animation: leavesToDay 5s linear forwards;
+}
+
 .trunk{
     position: absolute;
     height: 10%;
@@ -24,4 +32,32 @@
     top: 20%;
     background-color: rgba(114, 46, 46, 0.63);
     z-index: 6;
+}
+
+.trunkToNight{
+    animation: trunkToNight 5s linear forwards;
+}
+
+.trunkToDay{
+    animation: trunkToDay 5s linear forwards;
+}
+
+@keyframes leavesToNight{
+    from{background-color: green;}
+    to{background-color: rgb(0, 92, 0);}
+}
+
+@keyframes leavesToDay{
+    from{background-color: rgb(0, 92, 0);}
+    to{background-color: green;}
+}
+
+@keyframes trunkToNight{
+    from{background-color: rgba(114, 46, 46, 0.63);}
+    to{background-color: rgba(94, 38, 38, 0.63);}
+}
+
+@keyframes trunkToDay{
+    from{background-color: rgba(94, 38, 38, 0.63);}
+    to{background-color: rgba(114, 46, 46, 0.63);}
 }

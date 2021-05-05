@@ -15,7 +15,6 @@ class Form extends React.Component {
         this.key = '4779d0f4e9ba4b2449eb0ee7bef11459';
         this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.handleClickTwo = this.handleClickTwo.bind(this);
         this.capitalizeFirstLetters = this.capitalizeFirstLetters.bind(this);
         this.timeOfDay = this.timeOfDay.bind(this);
 
@@ -29,7 +28,9 @@ class Form extends React.Component {
             location: '',
             searchBar: null,
             background: '',
-            check: false
+            check: false,
+            hills: ['','','',''],
+            trees: ['','']
         };
     }
 
@@ -41,12 +42,12 @@ class Form extends React.Component {
         try {
             if (currentTime > sunrise && currentTime < sunset) {
                 if (this.state.timeSun !== '' || this.state.timeSun === 'dayFromNight') {
-                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay',background: 'dayBackground' });
+                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay',background: 'dayBackground', hills: ['hillOneDay','hillTwoDay','hillThreeFourDay','hillFiveDay'], trees:['leavesToDay','trunkToDay'] });
                 }
                 console.log('day');
             } else {
                 if (this.state.timeMoon === '' || this.state.timeMoon === 'nightFromDay') {
-                    this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight', background: 'nightBackground'});
+                    this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight', background: 'nightBackground',hills: ['hillOneNight','hillTwoNight','hillThreeFourNight','hillFiveNight'],trees:['leavesToNight','trunkToNight'] });
                 }
                 console.log('night');
             }
@@ -87,13 +88,14 @@ class Form extends React.Component {
         const data = await response.json();
 
         if (data.cod === 200) {
-            console.log(data.weather.description);
+
             this.setState({
                 temp: data.main.temp,
                 weather: this.capitalizeFirstLetters(data.weather[0].description)
             });
 
             let currentTime = new Date().valueOf() / 1000;
+            //let currentTime = data.coord.dt  fix this issue
             let sunrise = data.sys.sunrise;
             let sunset = data.sys.sunset;
     
@@ -107,22 +109,15 @@ class Form extends React.Component {
         this.state.searchBar.value = '';
     }
 
-    handleClickTwo() {
-
-        if (this.state.check === false) {
-            this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight', check: true, background: 'nightBackground'});
-        } else {
-            this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay', check: false, background: 'dayBackground' });
-        }
-
-    }
     render() {
 
         return (
             <div className={`container-a ${this.state.background}`}>
+
                 <div className='Title'>
                     <h1>Weather Radar</h1>
                 </div>
+
                 <div className='searchBar'>
                     <input type='text' placeholder='  Location' onChange={this.handleChange}></input>
                     <button onClick={this.handleClick}>Search</button>
@@ -138,8 +133,8 @@ class Form extends React.Component {
                 }
 
                 <MultipleClouds />
-                <button className='botton' onClick={this.handleClickTwo}>Click</button>
-                <Land></Land>
+
+                <Land time={this.state.hills} trees={this.state.trees}></Land>
                 <Waves></Waves>
 
             </div>
