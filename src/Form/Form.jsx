@@ -30,7 +30,9 @@ class Form extends React.Component {
             background: '',
             check: false,
             hills: ['','','',''],
-            trees: ['','']
+            trees: ['',''],
+            cave: ['','','','',''],
+            mountain: ['','','']
         };
     }
 
@@ -38,16 +40,15 @@ class Form extends React.Component {
     //Font needs to be some sort of nature font, also hover states please
 
     timeOfDay(currentTime, sunrise, sunset) {
-
         try {
             if (currentTime > sunrise && currentTime < sunset) {
                 if (this.state.timeSun !== '' || this.state.timeSun === 'dayFromNight') {
-                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay',background: 'dayBackground', hills: ['hillOneDay','hillTwoDay','hillThreeFourDay','hillFiveDay'], trees:['leavesToDay','trunkToDay'] });
+                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay',background: 'dayBackground', hills: ['hillOneDay','hillTwoDay','hillThreeFourDay','hillFiveDay'], trees:['leavesDay','trunkDay'],cave:['entranceDay','upperDay','lowerDay','upperGDay','lowerGDay'] });
                 }
                 console.log('day');
             } else {
                 if (this.state.timeMoon === '' || this.state.timeMoon === 'nightFromDay') {
-                    this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight', background: 'nightBackground',hills: ['hillOneNight','hillTwoNight','hillThreeFourNight','hillFiveNight'],trees:['leavesToNight','trunkToNight'] });
+                    this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight', background: 'nightBackground',hills: ['hillOneNight','hillTwoNight','hillThreeFourNight','hillFiveNight'],trees:['leavesNight','trunkNight'],cave:['entranceNight','upperNight','lowerNight','upperGNight','lowerGNight'] });
                 }
                 console.log('night');
             }
@@ -134,7 +135,7 @@ class Form extends React.Component {
 
                 <MultipleClouds />
 
-                <Land time={this.state.hills} trees={this.state.trees}></Land>
+                <Land time={this.state.hills} trees={this.state.trees} cave={this.state.cave} mountain={this.state.mountain}></Land>
                 <Waves></Waves>
 
             </div>

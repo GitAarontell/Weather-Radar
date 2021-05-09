@@ -165,9 +165,114 @@
     width: 10vw;
 }
 
-@keyframes upperCaveToNight{
+.caveEntrance{
+    fill: #596C76;
+}
+
+.entranceNight{
+    animation: entranceToNight 5s linear forwards;
+}
+
+.entranceDay{
+    animation: entranceToDay 5s linear forwards;
+}
+
+@keyframes entranceToNight{
+    from{fill:#596C76;}
+    to{fill:#4c5257;}
+}
+
+@keyframes entranceToDay{
+    from{fill:#4c575f;}
+    to{fill:#596C76;}
+}
+
+.upperCave{
+    fill: #7A8C98;
+}
+
+.upperNight{
+    animation: upperToNight 5s linear forwards;
+}
+
+.upperDay{
+    animation: upperToDay 5s linear forwards;
+}
+
+@keyframes upperToNight{
     from{fill:#7A8C98;}
-    to{fill:#4c575f;}
+    to{fill:#546068;}
+}
+
+@keyframes upperToDay{
+    from{fill:#4c575f;}
+    to{fill:#7A8C98;}
+}
+
+.lowerCave{
+    fill: #9FACBA;
+}
+
+.lowerNight{
+    animation: lowerToNight 5s linear forwards;
+}
+
+.lowerDay{
+    animation: lowerToDay 5s linear forwards;
+}
+
+@keyframes lowerToNight{
+    from{fill:#9FACBA;}
+    to{fill:#7e8894;}
+}
+
+@keyframes lowerToDay{
+    from{fill:#7e8894;}
+    to{fill:#9FACBA;}
+}
+
+.upperGrass{
+    fill: #9EC63D;
+}
+
+.upperGNight{
+    animation: upperGToNight 5s linear forwards;
+}
+
+.upperGDay{
+    animation: upperGToDay 5s linear forwards;
+}
+
+@keyframes upperGToNight{
+    from{fill:#9EC63D;}
+    to{fill:#678327;}
+}
+
+@keyframes upperGToDay{
+    from{fill:#678327;}
+    to{fill:#9EC63D;}
+}
+
+.lowerGrass{
+   fill: #B7E546; 
+}
+
+.lowerGNight{
+    animation: lowerGToNight 5s linear forwards;
+}
+
+.lowerGDay{
+    animation: lowerGToDay 5s linear forwards;
+}
+
+@keyframes lowerGToNight{
+    from{fill:#B7E546;}
+    to{fill:#7c9b2e;}
+}
+
+@keyframes lowerGToDay{
+    from{fill:#7c9b2e;}
+    to{fill:#B7E546;}
 }
 
 .mountainOne{

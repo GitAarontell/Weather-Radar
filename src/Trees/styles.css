@@ -17,11 +17,11 @@
     z-index: 6;
 }
 
-.leavesToNight{
+.leavesNight{
     animation: leavesToNight 5s linear forwards;
 }
 
-.leavesToDay{
+.leavesDay{
     animation: leavesToDay 5s linear forwards;
 }
 
@@ -34,11 +34,11 @@
     z-index: 6;
 }
 
-.trunkToNight{
+.trunkNight{
     animation: trunkToNight 5s linear forwards;
 }
 
-.trunkToDay{
+.trunkDay{
     animation: trunkToDay 5s linear forwards;
 }
 
