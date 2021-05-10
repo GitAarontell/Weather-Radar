@@ -2,7 +2,9 @@
     height: 80px;
     width: 80px;
     position: relative;
+    left: -10%;
     z-index: 2;
+    animation: myanimation 25s linear infinite;
 }
 
 .allStructures{
@@ -43,18 +45,15 @@
 }
 
 .one{
-    animation: myanimation 13s linear;
-    animation-iteration-count: infinite;
+    animation-delay: 1s;
 }
 
 .two{
-    animation: myanimation 12s linear;
-    animation-iteration-count: infinite;
+    animation-delay: 8s;
 }
 
 .three{
-    animation: myanimation 15s linear;
-    animation-iteration-count: infinite;
+    animation-delay: 5s;
 }
 
 .multipleClouds{
@@ -90,15 +89,15 @@
         top: 30%;
     }
     .one{
-        animation: myanimationTwo 15s linear;
+
         animation-iteration-count: infinite;
     }
     .two{
-        animation: myanimationTwo 18s linear;
+
         animation-iteration-count: infinite;
     }
     .three{
-        animation: myanimationTwo 20s linear;
+
         animation-iteration-count: infinite;
     }
 }
@@ -120,15 +119,15 @@
         top: 45%;
     }
     .one{
-        animation: myanimationThree 7s linear;
+
         animation-iteration-count: infinite;
     }
     .two{
-        animation: myanimationThree 9s linear;
+
         animation-iteration-count: infinite;
     }
     .three{
-        animation: myanimationThree 11s linear;
+
         animation-iteration-count: infinite;
     }
 }
@@ -149,20 +148,3 @@
     }
 }
 
-@keyframes myanimationTwo{
-    from {
-        left: -20%;
-    }
-    to {
-        left: 120%;
-    }
-}
-
-@keyframes myanimationThree{
-    from {
-        left: -30%;
-    }
-    to {
-        left: 130%;
-    }
-}

@@ -14,3 +14,21 @@ function Cloud (props) {
 }
 
 export default Cloud;
+
+/*@keyframes myanimationTwo{
+    from {
+        left: -20%;
+    }
+    to {
+        left: 120%;
+    }
+}
+
+@keyframes myanimationThree{
+    from {
+        left: -30%;
+    }
+    to {
+        left: 130%;
+    }
+} */
