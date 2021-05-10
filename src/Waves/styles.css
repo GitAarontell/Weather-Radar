@@ -5,7 +5,7 @@
     z-index: 5;
 }
 
-.allBalls{
+.allWaves{
     --variable-static-width: 6800px;
     --variable-responsive-width: 400vw;
 
@@ -19,29 +19,55 @@
     opacity: 0.90;
 }
 
-.ballOne{
+.waveOne{
     animation: wave 40s infinite linear;
     background-color: rgb(20, 121, 204);
 }
 
-.ballTwo{
+.waveOneNight{
+    transition: background-color 5s linear;
+    background-color: rgb(6, 54, 94);
+}
+
+.waveOneDay{
+    transition: background-color 5s linear;
+    background-color: rgb(20, 121, 204);
+}
+
+.waveTwo{
     animation: wave 35s infinite linear;
     background-color: rgb(59, 142, 209);
 }
 
-.ballThree{
-    animation: wave 30s infinite linear;
+.waveTwoNight{
+    transition: background-color 5s linear;
+    background-color: rgb(6, 61, 128);
+}
 
+.waveTwoDay{
+    transition: background-color 5s linear;
+    background-color: rgb(59, 142, 209);
+}
+
+.waveThree{
+    animation: wave 30s infinite linear;
     background-color: rgb(67, 154, 224);
 }
-.ballFour{
-    animation: wave 25s infinite linear;
+
+.waveThreeNight{
+    transition: background-color 5s linear;
+    background-color: rgb(19, 82, 134);
+}
+
+.waveThreeDay{
+    transition: background-color 5s linear;
     background-color: rgb(67, 154, 224);
 }
+
 
 @keyframes wave {
     from { transform: rotate(0deg);}
-    from { transform: rotate(-360deg);}
+    to { transform: rotate(360deg);}
 }
 
 @media(max-width: 1465px){

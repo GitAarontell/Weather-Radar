@@ -2,12 +2,12 @@ import React from 'react';
 import Cloud from './Cloud';
 import './styles.css';
 
-function MultipleClouds (){
+function MultipleClouds (props){
     return(
         <div className='multipleClouds'>
-            <Cloud type={'one'}/>
-            <Cloud type={'two'}/>
-            <Cloud type={'three'}/>
+            <Cloud type={'one'} clouds={props.clouds}/>
+            <Cloud type={'two'} clouds={props.clouds}/>
+            <Cloud type={'three'} clouds={props.clouds}/>
         </div>
     );
 }

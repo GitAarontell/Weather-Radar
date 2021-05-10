@@ -32,7 +32,9 @@ class Form extends React.Component {
             hills: ['','','',''],
             trees: ['',''],
             cave: ['','','','',''],
-            mountain: ['','','']
+            mountain: ['','',''],
+            waves: ['','',''],
+            clouds: ''
         };
     }
 
@@ -43,12 +45,12 @@ class Form extends React.Component {
         try {
             if (currentTime > sunrise && currentTime < sunset) {
                 if (this.state.timeSun !== '' || this.state.timeSun === 'dayFromNight') {
-                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay',background: 'dayBackground', hills: ['hillOneDay','hillTwoDay','hillThreeFourDay','hillFiveDay'], trees:['leavesDay','trunkDay'],cave:['entranceDay','upperDay','lowerDay','upperGDay','lowerGDay'] });
+                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay',background: 'dayBackground', hills: ['hillOneDay','hillTwoDay','hillThreeFourDay','hillFiveDay'], trees:['leavesDay','trunkDay'],cave:['entranceDay','upperDay','lowerDay','upperGDay','lowerGDay'], mountain: ['topDay','leftDay','leftNight'], waves: ['waveOneDay','waveTwoDay','waveThreeDay'], clouds: 'cloudDay' });
                 }
                 console.log('day');
             } else {
                 if (this.state.timeMoon === '' || this.state.timeMoon === 'nightFromDay') {
-                    this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight', background: 'nightBackground',hills: ['hillOneNight','hillTwoNight','hillThreeFourNight','hillFiveNight'],trees:['leavesNight','trunkNight'],cave:['entranceNight','upperNight','lowerNight','upperGNight','lowerGNight'] });
+                    this.setState({ timeSun: 'nightFromDay', timeMoon: 'dayFromNight', background: 'nightBackground',hills: ['hillOneNight','hillTwoNight','hillThreeFourNight','hillFiveNight'],trees:['leavesNight','trunkNight'],cave:['entranceNight','upperNight','lowerNight','upperGNight','lowerGNight'], mountain: ['topNight','leftNight','rightNight'], waves: ['waveOneNight','waveTwoNight','waveThreeNight'],clouds: 'cloudNight' });
                 }
                 console.log('night');
             }
@@ -133,10 +135,10 @@ class Form extends React.Component {
                     </div>
                 }
 
-                <MultipleClouds />
+                <MultipleClouds clouds={this.state.clouds}/>
 
                 <Land time={this.state.hills} trees={this.state.trees} cave={this.state.cave} mountain={this.state.mountain}></Land>
-                <Waves></Waves>
+                <Waves waves={this.state.waves}></Waves>
 
             </div>
         );

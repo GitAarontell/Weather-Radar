@@ -292,3 +292,69 @@
     width: 45vw;
     z-index: 3;
 }
+
+.mountainTop{
+    fill: #E7EBEC;
+}
+
+.topNight{
+    animation: topToNight 5s linear forwards;
+}
+
+.topDay{
+    animation: topToDay 5s linear forwards;
+}
+
+@keyframes topToNight{
+    from{fill:#E7EBEC;}
+    to{fill:#868888;}
+}
+
+@keyframes topToDay{
+    from{fill:#868888;}
+    to{fill:#E7EBEC;}
+}
+
+.leftMountain{
+    fill: #6F9AC2;
+}
+
+.leftNight{
+    animation: leftToNight 5s linear forwards;
+}
+
+.leftDay{
+    animation: leftToDay 5s linear forwards;
+}
+
+@keyframes leftToNight{
+    from{fill:#6F9AC2;}
+    to{fill:#425a70;}
+}
+
+@keyframes leftToDay{
+    from{fill:#425a70;}
+    to{fill:#6F9AC2;}
+}
+
+.rightMountain{
+    fill: #8cb3d9;
+}
+
+.rightNight{
+    animation: rightToNight 5s linear forwards;
+}
+
+.rightDay{
+    animation: rightToDay 5s linear forwards;
+}
+
+@keyframes rightToNight{
+    from{fill:#8cb3d9;}
+    to{fill:#5e768f;}
+}
+
+@keyframes rightToDay{
+    from{fill:#5e768f;}
+    to{fill:#8cb3d9;}
+}

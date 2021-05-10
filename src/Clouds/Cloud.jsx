@@ -5,10 +5,10 @@ function Cloud (props) {
 
     return(
         <div className={`cloud ${props.type}`}>
-            <div className='structureOne allStructures'></div>
-            <div className='structureTwo allStructures'></div>
-            <div className='structureThree allStructures'></div>
-            <div className='structureFour allStructures'></div>
+            <div className={`structureOne allStructures ${props.clouds}`}></div>
+            <div className={`structureTwo allStructures ${props.clouds}`}></div>
+            <div className={`structureThree allStructures ${props.clouds}`}></div>
+            <div className={`structureFour allStructures ${props.clouds}`}></div>
         </div>
     );
 }
