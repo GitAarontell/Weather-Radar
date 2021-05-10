@@ -71,7 +71,7 @@
 }
 
 @media(max-width: 1465px){
-    .allBalls{
+    .allWaves{
         height: 400vw;
         width: 400vw;
         top: 74vh;
@@ -80,25 +80,25 @@
 }
 
 @media(max-width: 975px){
-    .allBalls{
+    .allWaves{
         top: 70vh;
     }
 }
 
 @media(max-width: 850px){
-    .allBalls{
+    .allWaves{
         top: 63vh;
     }
 }
 
 @media(max-width: 570px){
-    .allBalls{
+    .allWaves{
         top: 55vh;
     }
 }
 
 @media(max-width: 290px){
-    .allBalls{
+    .allWaves{
         top: 50vh;
     }
 }
