@@ -22,6 +22,7 @@
 .waveOne{
     animation: wave 40s infinite linear;
     background-color: rgb(20, 121, 204);
+    opacity: 1;
 }
 
 .waveOneNight{

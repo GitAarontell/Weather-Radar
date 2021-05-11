@@ -41,11 +41,11 @@ class Form extends React.Component {
     //Need to put these functions in a javascript file then import
     //Font needs to be some sort of nature font, also hover states please
 
-    timeOfDay(currentTime, sunrise, sunset) {
+    timeOfDay(currentTime) {
         try {
-            if (currentTime > sunrise && currentTime < sunset) {
+            if (currentTime) {
                 if (this.state.timeSun !== '' || this.state.timeSun === 'dayFromNight') {
-                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay',background: 'dayBackground', hills: ['hillOneDay','hillTwoDay','hillThreeFourDay','hillFiveDay'], trees:['leavesDay','trunkDay'],cave:['entranceDay','upperDay','lowerDay','upperGDay','lowerGDay'], mountain: ['topDay','leftDay','leftNight'], waves: ['waveOneDay','waveTwoDay','waveThreeDay'], clouds: 'cloudDay' });
+                    this.setState({ timeSun: 'dayFromNight', timeMoon: 'nightFromDay',background: 'dayBackground', hills: ['hillOneDay','hillTwoDay','hillThreeFourDay','hillFiveDay'], trees:['leavesDay','trunkDay'],cave:['entranceDay','upperDay','lowerDay','upperGDay','lowerGDay'], mountain: ['topDay','leftDay','rightDay'], waves: ['waveOneDay','waveTwoDay','waveThreeDay'], clouds: 'cloudDay' });
                 }
                 console.log('day');
             } else {
@@ -82,7 +82,7 @@ class Form extends React.Component {
         });
     }
 
-    async handleClick(e) {
+    async handleClick() {
 
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.location}&appid=${this.key}&units=imperial`).catch((err) => {
             console.log(err.message);
@@ -97,12 +97,7 @@ class Form extends React.Component {
                 weather: this.capitalizeFirstLetters(data.weather[0].description)
             });
 
-            let currentTime = new Date().valueOf() / 1000;
-            //let currentTime = data.coord.dt  fix this issue
-            let sunrise = data.sys.sunrise;
-            let sunset = data.sys.sunset;
-    
-            this.timeOfDay(currentTime, sunrise, sunset);
+            this.timeOfDay(data.weather[0].icon.charAt(2) === 'd');
         }
         this.setState({ applicationStart: true });
         this.setState({ code: data.cod });
@@ -147,3 +142,21 @@ class Form extends React.Component {
 
 export default Form;
 
+
+            /* 
+            Keeping for historical records
+            
+            let date = new Date();
+            let localTime = date.valueOf() / 1000; // gets local time in seconds
+
+            let localOffset = date.getTimezoneOffset() * 60; // get timezone offset and turns from minutes to seconds
+            let utc = localTime + localOffset; // this is utc time which is universal time
+
+            let currentTime2 = utc + data.timezone; // it then add the timezone offset of wherever location i get back to the universal to get their local time
+
+            let sunrise = data.sys.sunrise;
+            let sunset = data.sys.sunset;
+
+            let nd = new Date(currentTime2 * 1000);
+            console.log(nd);
+            */
