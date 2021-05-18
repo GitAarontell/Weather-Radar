@@ -10,7 +10,7 @@ class Results extends React.Component {
         let post;
 
         if(this.props.code === 200){
-            post = <Temperature temp={this.props.temp} weather={this.props.weather}></Temperature>
+            post = <Temperature temp={this.props.temp} weather={this.props.weather} hourly={this.props.hourly}></Temperature>
         } else {
             post = <Error></Error>
         }

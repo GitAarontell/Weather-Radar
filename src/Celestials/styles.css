@@ -21,6 +21,7 @@
 .moonContainer{
     right: 10%;
     top: 4%;
+    width: 15vw;
 }
 
 .moon{
@@ -53,4 +54,59 @@
 @keyframes Rise {
     0% {transform: translateY(0);}
     100% {transform: translateY(100vh);}
+}
+
+@media(max-width: 875px){
+    .sun{
+        height: 10vw;
+        width: 10vw;
+    }
+
+    .moon svg{
+        height: 10vw;
+        width: 10vw;
+    }
+
+    .moonContainer{
+        right: 3%;
+        top: 10%;
+    }
+
+    .sunContainer{
+        top: 10%;
+    }
+}
+
+@media(max-width: 700px){
+
+    .moonContainer{
+        top: 15%;
+    }
+
+    .sunContainer{
+        top: 15%;
+    }
+}
+
+@media(max-width: 600px){
+
+    .moonContainer{
+        top: 20%;
+        right: 0;
+    }
+
+    .sunContainer{
+        top: 20%;
+    }
+}
+
+@media(max-width: 500px){
+
+    .moonContainer{
+        top: 30%;
+    }
+
+    .sunContainer{
+        top: 30%;
+    }
 }
