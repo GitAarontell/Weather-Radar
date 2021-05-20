@@ -8,7 +8,9 @@ function HourInfo(props) {
     let hour = date.getHours();
     let timeIndicator = 'AM'
 
-    if (hour > 12) {
+    if(hour === 0){
+        hour = 12;
+    } else if (hour > 12) {
         hour = hour - 12;
         timeIndicator = 'PM'
     }
@@ -16,7 +18,7 @@ function HourInfo(props) {
 
 
     return (
-        <div className='hourlyContainer'>
+        <div className={`hourlyContainer ${props.class}`}>
 
             <div className='hourTime'>
                 <p>{`${hour} ${timeIndicator}`}</p>
@@ -25,7 +27,7 @@ function HourInfo(props) {
             <div className='weatherImg'>
                 <img src={`http://openweathermap.org/img/wn/${props.hourly.weather[0].icon}@2x.png`} alt="current weather" ></img>
 
-                <div className='hourTemp'>
+                <div className='hourTemp' onClick={()=>{console.log('hello')}}>
                     <p>{Math.round(props.hourly.temp)}° F</p>
                 </div>
                 

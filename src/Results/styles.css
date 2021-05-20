@@ -41,22 +41,34 @@ p{
 }
 
 .thirdRow{
+    height: 140px;
     background-color: rgb(112, 102, 102);
     border-radius: 13px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-base-color: khaki;
+    cursor: grab;
+}
+
+.thirdRow > div {
+    scroll-snap-align: start;
 }
 
 .hourlyContainer{
+    position: relative;
     display: grid;
     grid-template-rows: .5fr .5fr;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
     padding: 3px 3px 3px 3px;
-    margin: 0 0 5px 0;
+    margin: 0 8px 5px 8px;
+    flex-shrink: 0;
 }
 
 .hourTime {
@@ -82,6 +94,24 @@ p{
     justify-self: center;
     align-self: center;
 }
+
+.zero{
+    display: none;
+}
+
+.selected{
+    animation: slideLeft 1s linear forwards;
+}
+
+@keyframes slideLeft{
+    from{
+        right: 0px;
+    }
+    to {
+        right: 50px;
+    }
+}
+
 
 @keyframes dissappear{
     from{visibility: visible;}
