@@ -4,27 +4,33 @@ import './styles.css';
 
 function Temperature(props) {
 
-    let [position, setPosition] = useState(['']);
+    let [slider, setSlider] = useState();
+    let [mouseDown, setMouseDown] = useState();
+    let [startX, setStartX] = useState();
+    let [scrollLeft, setScrollLeft] = useState();
 
-    function handleLeftClick() {
-        setPosition(['selected']);
-        console.log("hello");
-        console.log(position[0]);
+    function handleMouseDown(e) {
+        setSlider(e.currentTarget);
+        setMouseDown(true);
+        setStartX(e.pageX - e.currentTarget.offsetLeft);
+        setScrollLeft(e.currentTarget.scrollLeft);
     }
 
-    function clickFunction() {
-        console.log("hello");
+    function handleMouseUp() {
+        setMouseDown(false);
     }
 
-    // slice()
-    /*
-    // how about we post all 12 hours ahead and just animate the widths to 
-        */
-    //let hourObjArr = props.hourly.slice(1,13);
+    function handleMouseMove(e) {
+        if (!mouseDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        slider.scrollLeft = scrollLeft - walk;
+    }
 
-    let hourInfoPosting = props.hourly.slice(1, 13).map((arr) => {
+    let hourInfoPosting = props.hourly.slice(1, 25).map((arr) => {
         return (
-            <HourInfo hourly={arr} key={arr.dt} class={position[0]}></HourInfo>
+            <HourInfo hourly={arr} key={arr.dt} ></HourInfo>
         );
     });
 
@@ -42,30 +48,10 @@ function Temperature(props) {
                 </div>
             </div>
 
-            <div className='thirdRow'>
-
-
+            <div className={`${props.deskTouch}`} onMouseDown={handleMouseDown} onMouseLeave={handleMouseUp} onMouseUp={handleMouseUp} onMouseMove={handleMouseMove}>
                 {hourInfoPosting}
-
-
-
             </div>
         </div>
     );
 }
 export default Temperature;
-
-
-
-//<svg onClick={() => clickFunction()} className='rightArrow' width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg>
-
-//<svg onClick={() => clickFunction()} className='leftArrow' width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg>
-
-/*
-            <svg onClick={() => handleLeftClick()} className='leftArrow' width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg>
-
-                {hourInfoPosting}
-
-                <svg className='rightArrow' width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" />
-                </svg>
-*/

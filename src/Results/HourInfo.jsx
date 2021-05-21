@@ -18,7 +18,7 @@ function HourInfo(props) {
 
 
     return (
-        <div className={`hourlyContainer ${props.class}`}>
+        <div className={`hourlyContainer`}>
 
             <div className='hourTime'>
                 <p>{`${hour} ${timeIndicator}`}</p>

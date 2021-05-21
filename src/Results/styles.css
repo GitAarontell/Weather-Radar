@@ -40,6 +40,17 @@ p{
     text-align: center;
 }
 
+.thirdRowDesk{
+    height: 140px;
+    background-color: rgb(112, 102, 102);
+    border-radius: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: hidden;
+    cursor: grab;
+}
+
 .thirdRow{
     height: 140px;
     background-color: rgb(112, 102, 102);

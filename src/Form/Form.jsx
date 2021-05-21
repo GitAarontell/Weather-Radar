@@ -36,7 +36,8 @@ class Form extends React.Component {
             waves: ['','',''],
             clouds: '',
             hourly: '',
-            daily: ''
+            daily: '',
+            deskOrTouch: ''
         };
     }
 
@@ -98,6 +99,12 @@ class Form extends React.Component {
         console.log(this.state.hourly);
 
         this.state.searchBar.value = '';
+
+        if(('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
+            this.setState({deskOrTouch: 'thirdRow'});
+        }else {
+            this.setState({deskOrTouch: 'thirdRowDesk'});
+        }
     }
 
     render() {
@@ -119,7 +126,7 @@ class Form extends React.Component {
 
                 {this.state.applicationStart === true &&
                     <div className='results'>
-                        <Results code={this.state.code} temp={this.state.temp} weather={this.state.weather} hourly={this.state.hourly}/>
+                        <Results deskTouch={this.state.deskOrTouch} code={this.state.code} temp={this.state.temp} weather={this.state.weather} hourly={this.state.hourly}/>
                     </div>
                 }
 
