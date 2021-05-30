@@ -48,7 +48,7 @@ function Temperature(props) {
                 </div>
             </div>
 
-            <div className={`${props.deskTouch}`} onMouseDown={handleMouseDown} onMouseLeave={handleMouseUp} onMouseUp={handleMouseUp} onMouseMove={handleMouseMove}>
+            <div className={`${props.deskTouch} heightThrRow`} onMouseDown={handleMouseDown} onMouseLeave={handleMouseUp} onMouseUp={handleMouseUp} onMouseMove={handleMouseMove}>
                 {hourInfoPosting}
             </div>
         </div>

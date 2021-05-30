@@ -34,9 +34,10 @@
 }
 
 .results{
+    top: 20%;
     position: absolute;
     left: 50%;
-    margin-left: -150px;
+    margin-left: -157.5px;
     z-index: 7;
 }
 
@@ -96,8 +97,12 @@ button{
     outline: none;
 }
 
-@media(max-width: 380px){
+@media(max-width: 650px){
     .results{
-        margin-left: -128.5px;
+        margin-left: -117px;
     }
+}
+
+@media(max-width: 500px){
+
 }

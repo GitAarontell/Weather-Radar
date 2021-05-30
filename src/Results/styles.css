@@ -3,7 +3,7 @@ p{
 }
 
 .infoContainer{
-    width: 300px;
+    width: 315px;
     color: rgb(238, 238, 238);
     border-radius: 20px;
     opacity: 0.95;
@@ -41,33 +41,32 @@ p{
 }
 
 .thirdRowDesk{
-    height: 140px;
-    background-color: rgb(112, 102, 102);
-    border-radius: 13px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     overflow-x: hidden;
     cursor: grab;
 }
 
 .thirdRow{
-    height: 140px;
-    background-color: rgb(112, 102, 102);
-    border-radius: 13px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     scrollbar-base-color: khaki;
     cursor: grab;
+    scroll-padding-left: 8px;
 }
 
 .thirdRow > div {
     scroll-snap-align: start;
+}
+
+.heightThrRow{
+    height: 140px;
+    background-color: rgb(112, 102, 102);
+    border-radius: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-y: hidden;
 }
 
 .hourlyContainer{
@@ -106,35 +105,60 @@ p{
     align-self: center;
 }
 
-.zero{
-    display: none;
-}
-
-.selected{
-    animation: slideLeft 1s linear forwards;
-}
-
-@keyframes slideLeft{
-    from{
-        right: 0px;
-    }
-    to {
-        right: 50px;
-    }
-}
-
-
 @keyframes dissappear{
     from{visibility: visible;}
     to{opacity: hidden;}
 }
 
-@media(max-width: 380px){
+@media(max-width: 650px){
     .infoContainer{
         height: 300px;
-        width: 257px;
+        width: 235px;
     }
     .error h3{
-        margin-left: 45px;
+        margin-left: 20px;
+    }
+
+    .topRow{
+        height: 150px;
+    }
+
+    .heightThrRow{
+        height: 120px;
+    }
+
+    .weatherDescription h1{
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .currentTempDisp{
+        height: 80px;
+    }
+}
+
+@media(max-width: 500px){
+    .infoContainer{
+        width: 235px;
+    }
+    .error h3{
+        margin-left: 20px;
+    }
+
+    .topRow{
+        height: 75px;
+    }
+
+    .heightThrRow{
+        height: 120px;
+    }
+
+    .weatherDescription h1{
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .currentTempDisp{
+        height: 80px;
     }
 }

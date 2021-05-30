@@ -7,6 +7,7 @@ import Moon from '../Celestials/Moon';
 import Waves from '../Waves/Waves';
 import Land from '../LandMass/Land';
 import {capitalizeFirstLetters} from '../functions';
+import Rain from '../Rain/Rain';
 
 class Form extends React.Component {
 
@@ -37,7 +38,8 @@ class Form extends React.Component {
             clouds: '',
             hourly: '',
             daily: '',
-            deskOrTouch: ''
+            deskOrTouch: '',
+            rain: ''
         };
     }
 
@@ -74,37 +76,43 @@ class Form extends React.Component {
 
         const data = await response.json();
 
-
-
         if (data.cod === 200) {
             const response2 = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=minutely,alerts&appid=${this.key}&units=imperial`).catch((err) => {
                 console.log(err.message);
             });
             
             const data2 = await response2.json();
-            console.log(data2);
+
             this.setState({
                 temp: data.main.temp,
                 weather: capitalizeFirstLetters(data.weather[0].description),
                 hourly: data2.hourly,
                 daily: data2.daily,
+                rain: data.weather[0].main
             });
 
             this.timeOfDay(data.weather[0].icon.charAt(2) === 'd');
         }
+
+        // checks to see if user started any searches
         this.setState({ applicationStart: true });
         this.setState({ code: data.cod });
 
         console.log(data);
-        console.log(this.state.hourly);
 
+
+        // sets search bar to empty after search button clicked
         this.state.searchBar.value = '';
 
+
+        //touch screen device or not
         if(('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
             this.setState({deskOrTouch: 'thirdRow'});
         }else {
             this.setState({deskOrTouch: 'thirdRowDesk'});
         }
+
+        console.log(this.state.rain);
     }
 
     render() {
@@ -131,6 +139,11 @@ class Form extends React.Component {
                 }
 
                 <MultipleClouds clouds={this.state.clouds}/>
+
+                {this.state.rain === "Rain" &&
+                    <Rain></Rain>
+                }
+ 
 
                 <Land time={this.state.hills} trees={this.state.trees} cave={this.state.cave} mountain={this.state.mountain}></Land>
                 <Waves waves={this.state.waves}></Waves>
