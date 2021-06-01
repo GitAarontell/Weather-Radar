@@ -9,5 +9,5 @@ body, button, input{
 }
 
 body{
-    min-height: 568px;
+    height: 100vh;
 }
