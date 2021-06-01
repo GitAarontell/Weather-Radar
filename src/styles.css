@@ -7,3 +7,7 @@ html, body{
 body, button, input{
     font-family: 'Red Hat Display', sans-serif;
 }
+
+body{
+    min-height: 568px;
+}
