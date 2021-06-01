@@ -4,6 +4,6 @@ html, body{
     overflow: hidden;
 }
 
-body{
-    font-family: 'Indie Flower', cursive;
+body, button, input{
+    font-family: 'Red Hat Display', sans-serif;
 }

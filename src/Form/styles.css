@@ -63,15 +63,17 @@
 
 .searchBar input{
     border-radius: 8px;
+    border-right: none;
     margin-bottom: 50px;
     z-index: 10;
+    outline: none;
 }
 
 button{
+    border-left: none;
     border-radius: 8px;
     margin-bottom: 50px;
     z-index: 4;
-    border: none;
 }
 
 .earth{
