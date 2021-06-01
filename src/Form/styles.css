@@ -123,6 +123,8 @@ button:hover{
     }
 }
 
-@media(max-width: 500px){
-
+@media(max-height: 570px){
+    .results{
+        top: 40%;
+    }
 }
