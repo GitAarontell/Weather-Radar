@@ -76,7 +76,7 @@
 }
 
 input:hover{
-    transform: translateX(-4px);
+    transform: translateX(-2px);
 }
 
 ::placeholder{
